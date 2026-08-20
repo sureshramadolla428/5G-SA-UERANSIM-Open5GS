@@ -1,0 +1,38 @@
+# Secrets and local env (keep the published Compose lab .env)
+.env
+.env.local
+!.env.example
+!docker-compose/.env
+*.pem
+id_ed25519
+id_ed25519.pub
+
+# Python / caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# Logs and captures
+*.log
+*.pcap
+PCAPs/
+pcaps/
+
+# 3GPP copies
+**/*.pdf
+**/*.docx
+**/*.doc
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+agent-transcripts/
+
+# Helm / k8s local
+*.tgz
+charts/

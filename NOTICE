@@ -1,0 +1,26 @@
+﻿NOTICE
+
+Copyright (c) 2026 Suresh Ramadolla
+
+The original content of THIS repository is All Rights Reserved.
+All Rights Reserved. This public repository is a showcase; see LICENSE. No permission is granted to use, copy, modify, or distribute any part of this repository without prior written consent.
+
+Third-party open-source components (if any) remain under their own licenses.
+
+# Upstream licenses (this pack does not relicense them)
+
+This repository is **lab configuration and documentation** for a terrestrial 5G SA setup
+(Open5GS core + UERANSIM gNB/UE). It does **not** vendor UERANSIM or Open5GS source.
+
+The software you build and run is licensed by its authors:
+
+| Project | License | Source |
+|---------|---------|--------|
+| **Open5GS** (5G core) | [AGPL-3.0](https://github.com/open5gs/open5gs/blob/main/LICENSE) | https://github.com/open5gs/open5gs |
+| **UERANSIM** (gNB + UE) | [AGPL-3.0](https://github.com/aligungr/UERANSIM/blob/master/LICENSE) | https://github.com/aligungr/UERANSIM |
+| **Gradiant 5G charts** (optional Helm CNFs) | [Apache-2.0](https://github.com/Gradiant/5g-charts/blob/main/LICENSE) | https://github.com/Gradiant/5g-charts |
+
+Use those projects under **their** terms. This pack only records how they were configured in the lab.
+
+3GPP / ETSI specifications are copyrighted by their owners and are not included.
+
