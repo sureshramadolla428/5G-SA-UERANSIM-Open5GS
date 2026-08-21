@@ -1,4 +1,4 @@
-﻿# 5G SA Lab: Open5GS Core + UERANSIM gNB/UE
+# 5G SA Lab: Open5GS Core + UERANSIM gNB/UE
 
 ### Terrestrial UE â†” gNB â†” 5G core (software lab, PLMN 999/70)
 
@@ -136,7 +136,7 @@ This repository is **configuration and documentation only**. It does not relicen
 | UERANSIM | AGPL-3.0 | https://github.com/aligungr/UERANSIM/blob/master/LICENSE |
 | Gradiant 5G charts | Apache-2.0 | https://github.com/Gradiant/5g-charts/blob/main/LICENSE |
 
-See `NOTICE`. Helper scripts (Helm install wrapper, NAS list patch) live in a **private** companion repo, not here.
+See `NOTICE`. Helper scripts (Helm install wrapper, NAS list patch) live in the **private** companion [`5G-SA-UERANSIM-Open5GS-scripts`](https://github.com/sureshramadolla428/5G-SA-UERANSIM-Open5GS-scripts), not here.
 
 ## Author
 
@@ -145,4 +145,3 @@ Lab configuration notes by **Suresh Ramadolla**. Open5GS and UERANSIM remain the
 ## License / Rights
 
 All Rights Reserved. This public repository is a showcase; see LICENSE. No permission is granted to use, copy, modify, or distribute any part of this repository without prior written consent.
-
