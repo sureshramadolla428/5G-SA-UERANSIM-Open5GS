@@ -1,4 +1,4 @@
-# UERANSIM + Open5GS — Setup Guide
+# UERANSIM + Open5GS - Setup Guide
 > Part of the complete guide. See `UERANSIM-OPEN5GS-SETUP-GUIDE.md` for the full document.
 
 ## 15. Troubleshooting Common Issues
@@ -39,4 +39,4 @@ ping -I uesimtun0 -c 4 8.8.8.8
 
 ---
 
-*Document version: 2.0 — UERANSIM + Open5GS Setup Guide (replaces UERANSIM-ELLA-5G-SETUP-GUIDE.md)*
+*Document version: 2.0 - UERANSIM + Open5GS Setup Guide (replaces UERANSIM-ELLA-5G-SETUP-GUIDE.md)*

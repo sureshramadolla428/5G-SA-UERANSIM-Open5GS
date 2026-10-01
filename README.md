@@ -1,13 +1,13 @@
 # 5G SA Lab: Open5GS Core + UERANSIM gNB/UE
 
-### Terrestrial UE â†” gNB â†” 5G core (software lab, PLMN 999/70)
+### Terrestrial UE " gNB " 5G core (software lab, PLMN 999/70)
 
 ![5G SA](https://img.shields.io/badge/3GPP-5G%20SA-0033A0)
 ![Open5GS](https://img.shields.io/badge/Open5GS-core-1F4E79)
 ![UERANSIM](https://img.shields.io/badge/UERANSIM-gNB%20%2B%20UE-0A66C2)
 This repository is a **GitHub-ready public pack** for a **terrestrial 5G Standalone** lab:
 
-- **Core:** Open5GS (AMF, SMF, UPF, NRF, â€¦) via Docker Compose or Kubernetes/Helm
+- **Core:** Open5GS (AMF, SMF, UPF, NRF, ) via Docker Compose or Kubernetes/Helm
 - **RAN:** UERANSIM **gNB**
 - **UE:** UERANSIM **UE** (`uesimtun0` user plane)
 
@@ -35,13 +35,13 @@ Open5GS and UERANSIM are **upstream** projects. This pack vendors **lab configs 
 
 ```
 github-ueransim-open5gs/
-â”œâ”€â”€ docker-compose/          # Open5GS SA core (sa-deploy.yaml + .env)
-â”œâ”€â”€ ueransim/config/         # open5gs-gnb.yaml, open5gs-ue.yaml
-â”œâ”€â”€ kubernetes/              # Helm CNF notes (public helm commands)
-â”œâ”€â”€ slicing/                 # two S-NSSAI slices + QoS procedure
-â”œâ”€â”€ docs/                    # Docker / k8s workflows + UERANSIM guide
-â”œâ”€â”€ NOTICE                   # upstream license references
-â””â”€â”€ README.md
+""" docker-compose/ # Open5GS SA core (sa-deploy.yaml + .env)
+""" ueransim/config/ # open5gs-gnb.yaml, open5gs-ue.yaml
+""" kubernetes/ # Helm CNF notes (public helm commands)
+""" slicing/ # two S-NSSAI slices + QoS procedure
+""" docs/ # Docker / k8s workflows + UERANSIM guide
+""" NOTICE # upstream license references
+"""" README.md
 ```
 
 ---
@@ -71,16 +71,16 @@ These are **public Open5GS/UERANSIM test credentials**, not production secrets.
 
 ### 2. Build UERANSIM (once)
 
-Follow `docs/UERANSIM-OPEN5GS-SETUP-GUIDE.md` (clone + build `nr-gnb` / `nr-ue`). Copy this packâ€™s YAML into your UERANSIM `config/` directory.
+Follow `docs/UERANSIM-OPEN5GS-SETUP-GUIDE.md` (clone + build `nr-gnb` / `nr-ue`). Copy this pack(TM)s YAML into your UERANSIM `config/` directory.
 
-On Docker labs, set **gNB `gtpIp` to the VMâ€™s IP** (not always `127.0.0.1`) so GTP-U reaches `UPF_ADVERTISE_IP=172.22.0.8`. `ngapIp` stays `127.0.0.1` when AMF is published on the host.
+On Docker labs, set **gNB `gtpIp` to the VM(TM)s IP** (not always `127.0.0.1`) so GTP-U reaches `UPF_ADVERTISE_IP=172.22.0.8`. `ngapIp` stays `127.0.0.1` when AMF is published on the host.
 
 ### 3. RAN + UE (separate terminals)
 
 ```bash
-./build/nr-gnb -c config/open5gs-gnb.yaml          # Terminal 1 â€” expect NG Setup successful
-sudo ./build/nr-ue -c config/open5gs-ue.yaml       # Terminal 2 â€” expect uesimtun0
-ping -I uesimtun0 -c 4 8.8.8.8                      # Terminal 3
+./build/nr-gnb -c config/open5gs-gnb.yaml # Terminal 1 " expect NG Setup successful
+sudo ./build/nr-ue -c config/open5gs-ue.yaml # Terminal 2 " expect uesimtun0
+ping -I uesimtun0 -c 4 8.8.8.8 # Terminal 3
 ```
 
 ### 4. Stop (reverse order)
@@ -100,12 +100,12 @@ Core + UERANSIM as CNFs on k3s via Gradiant Helm charts:
 # discover chart versions, then install core + RAN (see kubernetes/README.md)
 O5_VER=$(helm show chart oci://registry-1.docker.io/gradiantcharts/open5gs | awk '/^version:/{print $2}')
 helm install open5gs oci://registry-1.docker.io/gradiantcharts/open5gs \
-  --version "$O5_VER" -n open5gs \
-  --values https://gradiant.github.io/5g-charts/docs/open5gs-ueransim-gnb/5gSA-values.yaml
+ --version "$O5_VER" -n open5gs \
+ --values https://gradiant.github.io/5g-charts/docs/open5gs-ueransim-gnb/5gSA-values.yaml
 RAN_VER=$(helm show chart oci://registry-1.docker.io/gradiant/ueransim-gnb | awk '/^version:/{print $2}')
 helm install ueransim-gnb oci://registry-1.docker.io/gradiant/ueransim-gnb \
-  --version "$RAN_VER" -n open5gs \
-  --values https://gradiant.github.io/5g-charts/docs/open5gs-ueransim-gnb/gnb-ues-values.yaml
+ --version "$RAN_VER" -n open5gs \
+ --values https://gradiant.github.io/5g-charts/docs/open5gs-ueransim-gnb/gnb-ues-values.yaml
 kubectl -n open5gs get pods
 kubectl -n open5gs exec -ti deployment/ueransim-gnb-ues -- ping -I uesimtun0 8.8.8.8
 ```

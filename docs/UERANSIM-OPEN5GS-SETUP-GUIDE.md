@@ -1,4 +1,4 @@
-# UERANSIM + Open5GS 5G Core — Complete Setup, Test & Stress Guide
+# UERANSIM + Open5GS 5G Core - Complete Setup, Test & Stress Guide
 
 > **Audience:** Linux administrators building a software-only 5G lab  
 > **Target OS:** Ubuntu 22.04+ inside VMware  
@@ -8,7 +8,7 @@
 
 ## About This Guide
 
-This guide walks through **UERANSIM** — open-source 5G gNB and UE simulator — connected to **Open5GS** 5G Core. It covers source builds, configuration aligned with upstream `config/open5gs-gnb.yaml` and `config/open5gs-ue.yaml`, signaling flows, PCAP analysis, and fault injection.
+This guide walks through **UERANSIM** - open-source 5G gNB and UE simulator - connected to **Open5GS** 5G Core. It covers source builds, configuration aligned with upstream `config/open5gs-gnb.yaml` and `config/open5gs-ue.yaml`, signaling flows, PCAP analysis, and fault injection.
 
 **Pre-built configs in this project:**
 
@@ -43,8 +43,8 @@ This guide walks through **UERANSIM** — open-source 5G gNB and UE simulator �
 
 **UERANSIM** ([github.com/aligungr/UERANSIM](https://github.com/aligungr/UERANSIM)) implements:
 
-- **nr-gnb** — 5G gNodeB (base station simulator)
-- **nr-ue** — 5G UE (phone simulator)
+- **nr-gnb** - 5G gNodeB (base station simulator)
+- **nr-ue** - 5G UE (phone simulator)
 
 The radio stack runs over **UDP** (not real RF). N2/N3 connect to Open5GS like a real RAN.
 
@@ -54,18 +54,18 @@ When paired with **Open5GS**, you get a complete SA 5G network on Linux.
 
 | Binary | Role |
 |---|---|
-| `nr-gnb` | gNB — NGAP to AMF, GTP-U to UPF |
-| `nr-ue` | UE — NAS registration, creates `uesimtun0` |
+| `nr-gnb` | gNB - NGAP to AMF, GTP-U to UPF |
+| `nr-ue` | UE - NAS registration, creates `uesimtun0` |
 
 ### 1.2 Where UERANSIM Fits with Open5GS
 
 ```text
-  ┌──────── UERANSIM ────────┐          ┌──── Open5GS ──────┐
-  │  nr-ue  ←RRC→  nr-gnb    │          │ AMF SMF UPF UDM …   │
-  │     │              │     │  N2 SCTP │                     │
-  │ uesimtun0            └────┼─────────►│ :38412              │
-  │                            │  N3 GTP  │ :2152               │
-  └────────────────────────────┘          └─────────────────────┘
+  --------- UERANSIM ---------          ----- Open5GS -------
+  -  nr-ue  <-RRC->  nr-gnb    -          - AMF SMF UPF UDM ...   -
+  -     -              -     -  N2 SCTP -                     -
+  - uesimtun0            ---------------- :38412              -
+  -                            -  N3 GTP  - :2152               -
+  ------------------------------          -----------------------
 ```
 
 ---
@@ -76,11 +76,11 @@ When paired with **Open5GS**, you get a complete SA 5G network on Linux.
 
 ```text
   UE          gNB         AMF         AUSF/UDM       SMF         UPF
-   │──Registration──►│──NGAP──────►│──SBI auth──►│              │
-   │◄──Accept────────│◄───────────│◄────────────│              │
-   │──PDU Session───►│──NGAP──────►│────────────►│──PFCP──────►│
-   │◄──IP assigned───│◄───────────│◄────────────│◄────────────│
-   │════════ GTP-U user traffic via uesimtun0 ═══════════════════►
+   ---Registration-----NGAP---------SBI auth---              -
+   ---Accept----------------------------------              -
+   ---PDU Session------NGAP----------------------PFCP-------
+   ---IP assigned------------------------------------------
+   --------- GTP-U user traffic via uesimtun0 -------------------
 ```
 
 ---
@@ -209,7 +209,7 @@ sessions:
 1. Ensure Open5GS + MongoDB + WebUI running
 2. Open `http://127.0.0.1:9999`
 3. Login: **admin** / **1423** (change after first login)
-4. **Subscriber → Add:**
+4. **Subscriber -> Add:**
 
 | Field | Value |
 |---|---|
@@ -231,9 +231,9 @@ docker exec -it open5gs-mongodb mongosh open5gs --eval \
 
 ## 9. Start and Verify the gNB
 
-**Terminal 1 — start Open5GS first** (see core guide).
+**Terminal 1 - start Open5GS first** (see core guide).
 
-**Terminal 2 — gNB:**
+**Terminal 2 - gNB:**
 
 ```bash
 cd /private-5g/UERANSIM/build
@@ -262,7 +262,7 @@ docker compose logs amf 2>/dev/null | grep -iE "NGSetup|gNB"
 
 ## 10. Start and Verify the UE
 
-**Terminal 3 — UE (requires root for TUN):**
+**Terminal 3 - UE (requires root for TUN):**
 
 ```bash
 cd /private-5g/UERANSIM/build
@@ -399,4 +399,4 @@ ping -I uesimtun0 -c 4 8.8.8.8
 
 ---
 
-*Document version: 2.0 — UERANSIM + Open5GS Setup Guide (replaces UERANSIM-ELLA-5G-SETUP-GUIDE.md)*
+*Document version: 2.0 - UERANSIM + Open5GS Setup Guide (replaces UERANSIM-ELLA-5G-SETUP-GUIDE.md)*

@@ -1,11 +1,11 @@
-# UERANSIM + Open5GS — Setup Guide
+# UERANSIM + Open5GS - Setup Guide
 > Part of the complete guide. See `UERANSIM-OPEN5GS-SETUP-GUIDE.md` for the full document.
 
 ## 9. Start and Verify the gNB
 
-**Terminal 1 — start Open5GS first** (see core guide).
+**Terminal 1 - start Open5GS first** (see core guide).
 
-**Terminal 2 — gNB:**
+**Terminal 2 - gNB:**
 
 ```bash
 cd /private-5g/UERANSIM/build

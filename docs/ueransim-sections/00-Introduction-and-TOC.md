@@ -1,7 +1,7 @@
-# UERANSIM + Open5GS — Setup Guide
+# UERANSIM + Open5GS - Setup Guide
 > Part of the complete guide. See `UERANSIM-OPEN5GS-SETUP-GUIDE.md` for the full document.
 
-# UERANSIM + Open5GS 5G Core — Complete Setup, Test & Stress Guide
+# UERANSIM + Open5GS 5G Core - Complete Setup, Test & Stress Guide
 
 > **Audience:** Linux administrators building a software-only 5G lab  
 > **Target OS:** Ubuntu 22.04+ inside VMware  
@@ -11,7 +11,7 @@
 
 ## About This Guide
 
-This guide walks through **UERANSIM** — open-source 5G gNB and UE simulator — connected to **Open5GS** 5G Core. It covers source builds, configuration aligned with upstream `config/open5gs-gnb.yaml` and `config/open5gs-ue.yaml`, signaling flows, PCAP analysis, and fault injection.
+This guide walks through **UERANSIM** - open-source 5G gNB and UE simulator - connected to **Open5GS** 5G Core. It covers source builds, configuration aligned with upstream `config/open5gs-gnb.yaml` and `config/open5gs-ue.yaml`, signaling flows, PCAP analysis, and fault injection.
 
 **Pre-built configs in this project:**
 

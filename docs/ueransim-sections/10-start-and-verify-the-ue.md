@@ -1,9 +1,9 @@
-# UERANSIM + Open5GS — Setup Guide
+# UERANSIM + Open5GS - Setup Guide
 > Part of the complete guide. See `UERANSIM-OPEN5GS-SETUP-GUIDE.md` for the full document.
 
 ## 10. Start and Verify the UE
 
-**Terminal 3 — UE (requires root for TUN):**
+**Terminal 3 - UE (requires root for TUN):**
 
 ```bash
 cd /private-5g/UERANSIM/build

@@ -1,6 +1,6 @@
 # ============================================
 # OPEN5GS UE CONFIGURATION
-# UERANSIM — aligned with config/open5gs-ue.yaml upstream
+# UERANSIM - aligned with config/open5gs-ue.yaml upstream
 # ============================================
 
 # --- UE Identity (must match Open5GS WebUI / MongoDB subscriber) ---

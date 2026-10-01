@@ -27,10 +27,10 @@ In `5gSA-values.yaml` (Open5GS core):
 - (Optional) `upf.containerSecurityContext.runAsUser/runAsGroup: 0` to allow tcpdump in the UPF pod.
 
 In `gnb-ues-values.yaml` (RAN):
-- `mcc: "999"`, `mnc: "70"` — must match the core and the registered subscriber.
-- `sst`, `sd`, `tac` — must match the core.
-- `ues.initialMSISDN` — starting MSISDN for generated UEs.
-- `amf.hostname` — must match the AMF Service name (default `open5gs-amf`; changes if you
+- `mcc: "999"`, `mnc: "70"` - must match the core and the registered subscriber.
+- `sst`, `sd`, `tac` - must match the core.
+- `ues.initialMSISDN` - starting MSISDN for generated UEs.
+- `amf.hostname` - must match the AMF Service name (default `open5gs-amf`; changes if you
   use a different Helm release name for the open5gs chart).
 
 ## 4. Install with your edited files

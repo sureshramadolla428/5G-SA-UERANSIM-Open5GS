@@ -1,16 +1,16 @@
-% 5G SA Lab — Prerequisites and Learning Path
+% 5G SA Lab - Prerequisites and Learning Path
 % The technologies and topics to know before using this project
 
 # How to use this document
 
 This lists every technology and topic the project touches, grouped by domain, with **why it
-matters here** and **where it is used**. You don't need to master all of it before starting —
+matters here** and **where it is used**. You don't need to master all of it before starting -
 use the "Suggested learning order" at the end. Each domain also marks items as **[Must]**
 (you'll be lost without it) or **[Helpful]** (deepens understanding / needed for the advanced parts).
 
 \newpage
 
-# Domain 1 — Networking fundamentals
+# Domain 1 - Networking fundamentals
 
 The whole project is a network. This is the most important base.
 
@@ -27,13 +27,13 @@ The whole project is a network. This is the most important base.
 | SCTP [Helpful] | The transport for the N2 control link (NGAP over SCTP/38412) |
 | Packet capture & analysis [Must] | tcpdump/Wireshark to inspect N2 and GTP-U |
 
-# Domain 2 — Linux and the command line
+# Domain 2 - Linux and the command line
 
 Everything runs on Linux; you live in the terminal.
 
 | Topic | Why it matters here |
 |-------|---------------------|
-| Bash shell: commands, pipes `\|`, redirects `>`, env vars [Must] | Every step; `curl … \| sh`, `export KUBECONFIG` |
+| Bash shell: commands, pipes `\|`, redirects `>`, env vars [Must] | Every step; `curl ... \| sh`, `export KUBECONFIG` |
 | File system & paths, `cd`, `ls` [Must] | Running compose from the right folder |
 | Permissions, `sudo`, ownership (`chown`) [Must] | Packet capture needs root; the kubeconfig fix |
 | Processes: `ps`, `kill`, `killall` [Must] | Managing nr-gnb/nr-ue; clearing stale processes |
@@ -42,7 +42,7 @@ Everything runs on Linux; you live in the terminal.
 | systemd services [Helpful] | k3s and Docker run as services |
 | Text editors (nano/vi) [Must] | Editing YAML/config files |
 
-# Domain 3 — Virtualization
+# Domain 3 - Virtualization
 
 | Topic | Why it matters here |
 |-------|---------------------|
@@ -50,7 +50,7 @@ Everything runs on Linux; you live in the terminal.
 | NAT vs bridged VM networking [Must] | NAT gives the VM internet; affects reachability |
 | Guest/host, shared folders [Helpful] | Moving files between Windows and the VM |
 
-# Domain 4 — Containers and Docker
+# Domain 4 - Containers and Docker
 
 | Topic | Why it matters here |
 |-------|---------------------|
@@ -60,7 +60,7 @@ Everything runs on Linux; you live in the terminal.
 | Docker Compose: services, ports, volumes, env, networks [Must] | The whole `sa-deploy.yaml` core |
 | Container networking & port publishing [Must] | The port-2152 conflict and its fix |
 
-# Domain 5 — 5G / Telecom architecture (3GPP)
+# Domain 5 - 5G / Telecom architecture (3GPP)
 
 The core domain. This is what makes the project *5G* rather than generic containers.
 
@@ -79,7 +79,7 @@ The core domain. This is what makes the project *5G* rather than generic contain
 | PDU session, QoS / 5QI [Must] | The data connection the UE gets |
 | Control plane vs user plane [Must] | The single most important operational concept in the lab |
 
-# Domain 6 — Open5GS and UERANSIM (the specific tools)
+# Domain 6 - Open5GS and UERANSIM (the specific tools)
 
 | Topic | Why it matters here |
 |-------|---------------------|
@@ -88,7 +88,7 @@ The core domain. This is what makes the project *5G* rather than generic contain
 | UERANSIM gNB config (linkIp/ngapIp/gtpIp, amfConfigs) [Must] | The tower addressing that caused/fixed the packet loss |
 | UERANSIM UE config (supi/key/op/opType, sessions) [Must] | The phone identity |
 
-# Domain 7 — Observability (metrics, dashboards, alerts)
+# Domain 7 - Observability (metrics, dashboards, alerts)
 
 | Topic | Why it matters here |
 |-------|---------------------|
@@ -99,7 +99,7 @@ The core domain. This is what makes the project *5G* rather than generic contain
 | Log analysis & PCAP analysis [Must] | Diagnosing what failed |
 | SLI/SLO thinking [Helpful] | Turning metrics into service objectives |
 
-# Domain 8 — Kubernetes and Helm (cloud-native)
+# Domain 8 - Kubernetes and Helm (cloud-native)
 
 | Topic | Why it matters here |
 |-------|---------------------|
@@ -112,7 +112,7 @@ The core domain. This is what makes the project *5G* rather than generic contain
 | CNF concept [Must] | The whole point of the K8s phase |
 | Multus CNI, SCTP on K8s, Operators/CRDs [Helpful] | The advanced, production-realistic extensions |
 
-# Domain 9 — Programming, data formats, and tooling
+# Domain 9 - Programming, data formats, and tooling
 
 | Topic | Why it matters here |
 |-------|---------------------|
@@ -128,16 +128,16 @@ The core domain. This is what makes the project *5G* rather than generic contain
 
 # Suggested learning order
 
-If you're starting fresh, learn in this order — each layer builds on the previous:
+If you're starting fresh, learn in this order - each layer builds on the previous:
 
-1. **Networking fundamentals** (IP, routing, NAT, TCP/UDP, ping, tunneling) — everything rests on this.
+1. **Networking fundamentals** (IP, routing, NAT, TCP/UDP, ping, tunneling) - everything rests on this.
 2. **Linux command line** (bash, permissions, processes, ip/ss, apt).
 3. **Virtualization** (set up an Ubuntu VM with NAT).
 4. **Containers & Docker Compose** (images, ports, the compose file model).
-5. **5G architecture (3GPP)** — the core domain: RAN vs core, the NFs, N2/N3/N4, NGAP/NAS/GTP-U, identifiers, authentication, control vs user plane.
-6. **Open5GS + UERANSIM** — apply domain 5 with these specific tools.
+5. **5G architecture (3GPP)** - the core domain: RAN vs core, the NFs, N2/N3/N4, NGAP/NAS/GTP-U, identifiers, authentication, control vs user plane.
+6. **Open5GS + UERANSIM** - apply domain 5 with these specific tools.
 7. **Observability** (Prometheus, Grafana, Alertmanager, Wireshark).
-8. **Kubernetes + Helm** — pods/deployments/services, kubectl, charts, k3s, CNFs.
+8. **Kubernetes + Helm** - pods/deployments/services, kubectl, charts, k3s, CNFs.
 9. **Programming glue** (YAML, bash, a little Python, Git).
 
 # Minimum to get started vs. full mastery
@@ -148,9 +148,9 @@ If you're starting fresh, learn in this order — each layer builds on the previ
 
 # Good study anchors (verify current versions/links yourself)
 
-- 3GPP 5G system specs (TS 23.501 architecture, TS 23.502 procedures) — authoritative but dense.
-- Open5GS documentation and UERANSIM wiki — the exact tools here.
+- 3GPP 5G system specs (TS 23.501 architecture, TS 23.502 procedures) - authoritative but dense.
+- Open5GS documentation and UERANSIM wiki - the exact tools here.
 - Kubernetes and Helm official docs; the CNCF ecosystem.
 - Prometheus and Grafana official docs.
 
-*(These are directions, not endorsements — check the current official sources.)*
+*(These are directions, not endorsements - check the current official sources.)*

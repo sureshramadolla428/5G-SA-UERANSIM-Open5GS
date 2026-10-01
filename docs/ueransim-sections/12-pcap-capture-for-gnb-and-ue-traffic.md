@@ -1,4 +1,4 @@
-# UERANSIM + Open5GS — Setup Guide
+# UERANSIM + Open5GS - Setup Guide
 > Part of the complete guide. See `UERANSIM-OPEN5GS-SETUP-GUIDE.md` for the full document.
 
 ## 12. PCAP Capture for gNB and UE Traffic

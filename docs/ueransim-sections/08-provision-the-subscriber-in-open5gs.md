@@ -1,4 +1,4 @@
-# UERANSIM + Open5GS — Setup Guide
+# UERANSIM + Open5GS - Setup Guide
 > Part of the complete guide. See `UERANSIM-OPEN5GS-SETUP-GUIDE.md` for the full document.
 
 ## 8. Provision the Subscriber in Open5GS
@@ -8,7 +8,7 @@
 1. Ensure Open5GS + MongoDB + WebUI running
 2. Open `http://127.0.0.1:9999`
 3. Login: **admin** / **1423** (change after first login)
-4. **Subscriber → Add:**
+4. **Subscriber -> Add:**
 
 | Field | Value |
 |---|---|
